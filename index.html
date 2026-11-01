@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#090b14" />
+    <title>Sontimo TV</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <div class="aurora aurora-one"></div>
+      <div class="aurora aurora-two"></div>
+
+      <section class="tv" aria-label="Sontimo TV canlı yayın">
+        <header class="topbar">
+          <div class="brand">
+            <span class="signal" aria-hidden="true"></span>
+            <span class="brand-name">SONTİMO <b>TV</b></span>
+          </div>
+
+          <span class="badge" id="liveBadge">
+            <span class="badge-dot"></span>
+            CANLI
+          </span>
+
+          <div class="topbar-spacer"></div>
+
+          <button class="icon-button" id="reloadButton" type="button" title="Yenile (R)">
+            <span aria-hidden="true">⟳</span>
+          </button>
+          <button
+            class="icon-button"
+            id="fullscreenButton"
+            type="button"
+            title="Tam ekran (F)"
+          >
+            <span aria-hidden="true">⛶</span>
+          </button>
+          <a
+            class="youtube-button"
+            id="youtubeLink"
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            YouTube’da Aç
+          </a>
+        </header>
+
+        <div class="screen" id="screen">
+          <iframe
+            id="player"
+            class="player hidden"
+            title="Sontimo TV YouTube canlı yayını"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+
+          <div class="setup" id="setup">
+            <div class="setup-card">
+              <div class="setup-icon">📺</div>
+              <h1>Sontimo TV</h1>
+              <p>
+                Canlı yayın kanalı henüz bağlanmadı. Sunucuda
+                <code>/tv-kur</code> komutunu çalıştırınca burası otomatik
+                olarak YouTube yayınına bağlanacak.
+              </p>
+              <p class="setup-note">
+                Yayın başladığında bot sesli odaya davet gönderecek.
+              </p>
+            </div>
+          </div>
+
+          <div class="vignette"></div>
+          <div class="screen-glow"></div>
+        </div>
+
+        <footer class="bottombar">
+          <div class="now-playing">
+            <span class="live-dot" id="liveDot"></span>
+            <span class="now-label">ŞİMDİ</span>
+            <strong id="nowTitle">Sontimo TV</strong>
+          </div>
+          <div class="hint" id="hint">Yayın yoksa kanalın canlı olmasını bekle.</div>
+        </footer>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
